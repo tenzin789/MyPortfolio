@@ -5,22 +5,22 @@
 	<head>
 		<title>Tenzin Thayai | Web developer</title>
 		<link rel="stylesheet" href="style.css">
-		<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Helvetica Neue" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Squada One" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Fahkwang|Merriweather:400,700|Nanum+Gothic|Nunito|Poppins:400,500,600|Quicksand:400,500,700|Ubuntu" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	</head>
 
 	<body class="homepage">
 
+		<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
 		<header id="top" class="main-header">
 			<div class="topnav-right">
 					<ul>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Skills</a></li>
-						<li><a href="#">Projects</a></li>
-						<li><a href="#">Get In Touch</a></li>
+						<li><a class="cool-link" href="#About">About</a></li>
+						<li><a class="cool-link" href="#Projects">Projects</a></li>
+						<li><a class="cool-link" href="#Skills">Skills</a></li>
+						<li><a class="cool-link" href="#GetInTouch">Get In Touch</a></li>
 					</ul>
 			</div>
 			<div class="header centertext">
@@ -29,14 +29,18 @@
 			</div>
 		</header>
 
-		<!-- main container -->
+		<!---------- main container ---------->
 		<div class="main-container">
+
+			<!------ about section ------>
+			<span class="anchor" id="About"></span>
 			<div class="About centertext">
 				<h2>About</h2>
-				<p>Hello, I'm Tenzin, a Frontend web developer based in <strong>NYC</strong>. I enjoy everything from designing to deployment, and I love building beautiful and responsive websites.</p>
+				<p><strong>Hi, I'm Tenzin</strong>, a Frontend web developer based in <strong>NYC</strong>. I enjoy everything from building websites from scratch to deployment, and I love building beautiful and responsive websites.</p>
 			</div>
 
-
+			<!-- projects section -->
+			<span class="anchor" id="Projects"></span>
 			<div class="Projects t-border group">
 				<h2>Projects</h2>
 				<div class="project-left">
@@ -44,7 +48,7 @@
 						<h3>Project1</h3>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 					</div>
-					<div div class="project-border2">
+					<div class="project-border2">
 						<h3>Project2</h3>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 					</div>
@@ -61,6 +65,8 @@
 				</div>
 			</div>
 
+			<!-- skills section -->
+			<span class="anchor" id="Skills"></span>
 			<div class="Skills t-border centertext">
 				<h2>Skills</h2>
 				<ul>
@@ -72,40 +78,94 @@
 				</ul>
 			</div>
 
+			<!-- contact section -->
+			<span class="anchor" id="GetInTouch"></span>
 			<div class="Contact t-border">
 				<h2>Get In Touch</h2>
-				<p>Email - <a href="@mail:tenzinthayai@gmail.com">TenzinThayai@gmail.com</a></p>
+				<p>Email - <a href="mailto:tenzinthayai@gmail.com">TenzinThayai@gmail.com</a></p>
 				<p>Phone - (347)-656-4065</p>
 			</div>
 
 
-
 		</div>
-		<!-- end main-containter -->
-			<footer class="t-border centertext">
-				<p>Designed by Tenzin Thayai | 2018</p>
-				<div>
+		<!------ end main-containter ------>
 
-					<ul class="social-icons">
-					    <li><a href="http://www.facebook.com" target="_blank"><img src='logo/social-1_logo-facebook.svg'/></a></li>
-					    <li><a href="http://www.instagram.com" target="_blank"><img src='logo/social-1_logo-instagram.svg' /></a></li>
-					    <li><a href="http://www.linkedin.com" target="_blank"><img src='logo/social-1_logo-linkedin.svg' /></a></li>
-					</ul>
+		<!-- footer section -->
+			<footer class="t-border centertext">
+
+				<!-- font-awesome icons -->
+				<div class="icons">
+					<a href="https://www.linkedin.com/in/tenzin-thayai/" target="_blank" class="fa fa-linkedin"></a>
+					<a href="https://www.instagram.com/thayazz/" target="_blank"class="fa fa-instagram"></a>
+					<a href="https://github.com/tenzinthayai" target="_blank"class="fa fa-github"></a>
 				</div>
-		
+
+				<p>&copy; Tenzin Thayai 2018</p>
+
 			</footer>
 
+			<!-- JQuery lib -->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+			<!-- smooth scrolling -->
+			<script> 
+				$(document).ready(function(){
+				  // Add smooth scrolling to all links
+				  $("a").on('click', function(event) {
 
+				    // Make sure this.hash has a value before overriding default behavior
+				    if (this.hash !== "") {
+				      // Prevent default anchor click behavior
+				      event.preventDefault();
 
+				      // Store hash
+				      var hash = this.hash;
 
+				      // Using jQuery's animate() method to add smooth page scroll
+				      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+				      $('html, body').animate({
+				        scrollTop: $(hash).offset().top}, 800, function(){
+				   
+				        // Add hash (#) to URL when done scrolling (default click behavior)
+				        window.location.hash = hash;
+				      });
+				    } // End if
+				  });
+				});
+			</script>
+			<!-- end smooth scrolling -->
 
+			<!-- Transition nav bar from transparent to solid when scrolled more than 600px -->
+			<script>
+				$(document).ready(function() {
+			        // Transition effect for navbar 
+			        $(window).scroll(function() {
+			          // checks if window is scrolled more than 600px, adds/removes solid class
+			          if($(this).scrollTop() > 600) { 
+			              $('.topnav-right').addClass('solid');
+			          } else {
+			              $('.topnav-right').removeClass('solid');
+			          }
+			        });
+			});
+			</script>
+			<!-- When the user scrolls down 20px from the top of the document, show the button -->
+			<script>
+				window.onscroll = function() {scrollFunction()};
 
+				function scrollFunction() {
+				    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				        document.getElementById("myBtn").style.display = "block";
+				    } else {
+				        document.getElementById("myBtn").style.display = "none";
+				    }
+				}
 
+				// When the user clicks on the button, scroll to the top of the document
+				function topFunction() {
+				    document.body.scrollTop = 0; // For Safari
+				    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+				}
 
-
-
-
-
-
+			</script>
 	</body>
 </html>

@@ -3,38 +3,78 @@
 }
 
 
-
 body {
 	margin: 0;
 	padding: 0;
-	font-family: "Helvetica Neue";
-
-	color: #878787;
+	font-family: 'Nanum Gothic', sans-serif; 
+	color: grey;
+	background-color: #f2f2f2;
 }
+
+.anchor{
+  display: block;
+  height: 65px; /*same height as header*/
+  visibility: hidden;
+}
+
+.topnav-right.solid {
+  background-color: #1966b3;
+  transition: background-color 1s ease 0s;
+  box-shadow: 2px 3px 5px grey;
+}
+
 /* links--------------------------*/
 .topnav-right li{
 	display: inline-block;
 
 }
+
 .topnav-right {
 	float: right;
-	margin: 20px 20px 0;
+	overflow: hidden;
+	position: fixed;
+	background-color: transparent;
+	top: 0;
+	width: 100%;
+	text-align: right;
+	font-family: 'Poppins', sans-serif;
+	
 }
+
 .topnav-right ul{
 	display: inline-block;
 	padding-top: 0;
 }
 
 .topnav-right ul li a {
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 	text-decoration: none;
-	color: white;
+	color: #ff751a; 
 	font-size: 20px;
-	padding-right: 35px;
+	padding: 5px 35px 5px 0;
+
 }
 
-.topnav-right a:hover {
-	color: #ff751a;
+
+/* links underline animation --------------------------*/
+.cool-link {
+    display: inline-block;
+    color: #000;
+    text-decoration: none;
+}
+
+.cool-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width .3s;
+}
+
+.cool-link:hover::after {
+    width: 100%;
+    /*//transition: width .3s;*/
 }
 /* main header --------------------------*/
 .main-header {
@@ -52,48 +92,53 @@ body {
 	padding-top: 350px;
 }
 .title {
-	font-family: sans-serif;
 	font-size: 100px;
 	color: white;
 	text-transform: uppercase;
+	font-family: 'Quicksand', sans-serif;
+	font-weight: 500;
 
 }
 
 .main-header h1 {
-	font-family: sans-serif;
+	font-family: 'Quicksand', sans-serif;
+	font-weight: 400;
+	font-weight: normal;
 	font-size: 40px;
 	color: white;
-	padding-bottom: 20px;
+	/*padding-bottom: 20px;*/
 }
+
 
 /* main styles --------------------------*/
 .main-container {
-	width: 75%;
+	width: 70%;
 	margin: auto;
 }
 
 .main-container h2 {
 	text-align: center;
-	margin: 50px 0 35px;
-	font-family: sans-serif;
-	text-transform: uppercase;
-	font-size: 20px;
+	/*margin: 50px 0 0px;*/
+	/*padding-bottom: 20px;*/
+	font-family: 'Poppins', sans-serif;
+	font-size: 25px;
 	letter-spacing: 2px;
 }
 
 .main-container p {
-	line-height: 20px;
+	line-height: 30px;
 }
 
 .t-border {
   border-top: 2px solid #dfe2e6;
 }
 
-.About,
-.Projects,
-.Skills,
-.Contact {
-	margin-bottom: 70px;
+/*.About,*/
+.Projects h2,
+.Skills h2,
+.Contact h2 {
+	margin-top: 70px;
+	padding-bottom: 20px;
 }
 
 /* Floated Columns ------------------ */
@@ -139,14 +184,16 @@ body {
 	text-align: center;
 }
 
+.Contact {
+	padding-bottom: 40px;
+}
 .Skills li{
 	display: inline-block;
 	margin-right: 60px;
 	background-color: #ff751a;
 	border-radius: 5px;
 	padding: 8px 6px 8px 9px;
-	border-bottom-style: solid;
-	border-bottom-color: grey;
+	box-shadow: 5px 4px 4px grey;
 }
 
 .Skills li a{
@@ -161,23 +208,97 @@ body {
 
 footer{
 	width: 100%;
-	padding-top: 40px;
-	padding-bottom: 40px;
+	padding-top: 30px;
+	padding-bottom: 30px;
 	border-bottom: 10px solid #ff751a; /*#ffa949*/
 
 }
 
-.social-icons li{
-	display: inline-block;
-	text-align: center;
-	margin-right: 15px;
-
+/* font-awesome icons----------------------*/
+.icons, .fa {
+  padding: 17px 19px;
+  font-size: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 0px 3px;
+  border-radius: 50%;
+  transition: all .5s;
 }
-.social-icons {
-	margin: auto;
+
+.fa:hover {
+    /*opacity: 0.7;*/
+    transform: scale(1.2) rotate(10deg);
 }
 
-.social-icons img:hover {
-	background-color: lightblue;
-	border-color: white;
+.fa-linkedin {
+  /*background: #007bb5;*/
+  background: linear-gradient(to right, #1a8cff, #004080);
+  /*background: linear-gradient(to right, #0073e6, #004080);*/
+  color: white;
+   width: 65px;
+}
+.fa-linkedin:hover {
+	background: #f2f2f2;
+  	color: #0066cc;
+}
+
+.fa-instagram {
+  background: linear-gradient(to right, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  color: white;
+}
+.fa-instagram:hover {
+  background: #f2f2f2;
+  color: #d62976;
+}
+
+.fa-github {
+  background: linear-gradient(to right, #404040, #1a1a1a);
+  color: white;
+}
+
+.fa-github:hover {
+  background: #f2f2f2;
+  color: #333333;
+}
+
+/* Back to top btn --------------------*/
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background: linear-gradient(to right, #ff1a1a, #cc0000);/* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 50%; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+    box-shadow: 3px 4px 4px grey;
+    text-shadow: 3px 3px 3px black; /* text-shadow: h-shadow v-shadow blur-radius color|none|initial|inherit;*/
+}
+
+#myBtn:hover {
+     transform: scale(1.1) rotate(0deg);
+     background-color: #ff751a;
+     color: black;
+     text-shadow: none;
+}
+
+/* Media Queries -------------------- unfinished*/
+
+@media (max-width: 1346px) {
+	.Skills li{
+		display: block;
+		padding: 8px 6px 8px 9px;
+		background-color: #ff751a;
+
+	}
+}
+@media (max-width: 1024px) {
+	.main-container {
+		width: 90%;
+	}
 }
